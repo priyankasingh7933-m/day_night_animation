@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sunmoon</title>
+    <style>
+        body {
+            margin: 0;
+        }
+        .sky {
+            width: 100vw;
+            height: 100vh;
+            background-color: skyblue;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: animated-sky 10s linear infinite;
+            position: relative;
+            overflow: hidden;
+        }
+        .sun, .moon {
+            position: absolute;
+            width: 50vmin;
+            height: 50vmin;
+            border-radius: 50%;
+        }
+        .sun {
+            background-color: gold;
+            animation: animate-sun 10s linear infinite;
+        }
+        .moon {
+            background-color: slategray;
+            animation: animate-moon 10s linear infinite;
+        }
+        @keyframes animated-sky {
+            50% {
+                background-color: black;
+            }
+        }
+        @keyframes animate-sun {
+            50% {
+                box-shadow: 0 0 5em 1em white;
+            }
+        }
+        @keyframes animate-moon {
+            from {
+                transform: translateX(-100vmin);
+            }
+            50% {
+                transform: translateX(100vmin);
+            }
+            to {
+                transform: translateX(200vmin);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="sky">
+        <div class="sun"></div>
+        <div class="moon"></div>
+    </div>
+</body>
+</html>
